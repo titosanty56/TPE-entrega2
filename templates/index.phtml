@@ -1,0 +1,23 @@
+<?php 
+    require_once './templates/layouts/header.phtml';  // Aquí se incluye el header una vez
+
+    if(isset($aerolineas)){
+        echo '<ul>';
+        foreach($aerolineas as $aerolinea){
+            echo '<li>' . $aerolinea->Nombre . '</li>'; 
+            echo '<a href="detallesaerolinea/' . $aerolinea->id . '">Ver más</a>';
+        }
+        echo '</ul>';
+    }
+
+    if(isset($personas)){
+        echo '<ul>';
+        foreach($personas as $persona){
+            echo '<li>' . $persona->Nombre . '</li>'; 
+            echo '<a href="detallespersona/' . $persona->id_persona . '">Ver más</a>';
+        }
+        echo '</ul>';
+    }
+
+    require_once './templates/layouts/footer.phtml';  // Aquí se incluye el footer una vez
+?>
