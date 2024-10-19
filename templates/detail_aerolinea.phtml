@@ -1,0 +1,36 @@
+<?php require './templates/layouts/header.phtml'; ?>
+
+
+<div class="container mt-5">
+    <h1 class="text-center text-secondary display-6">Detalles de la Aerolinea: <?= $aerolinea->Nombre; ?></h1>
+    
+    <div class="card mb-4">
+        <div class="card-header">
+            Información de la Aerolinea
+        </div>
+        <div class="card-body">
+            <p><strong>Pais de origen:</strong> <?= $aerolinea->Pais; ?></p>
+            <p><strong>Fundacion de la empresa:</strong> <?= $aerolinea->Fundacion; ?></p>
+            <p><strong>Servicios que ofrece:</strong> <?= $aerolinea->servicios; ?></p>
+        </div>
+    </div>
+
+    <h2>personas Asociadas</h2>
+    <ul class="list-group">
+        <?php if (!empty($personas)): ?>
+            <?php foreach ($personas as $persona): ?>
+                <li class="list-group-item">
+                    <strong><?= $persona->Nombre; ?></strong> - <strong>Cantidad de pasajes:</strong> $<?= number_format($persona->Cantidad, 2); ?> - <strong>Destino:</strong> <?= $persona->Destino; ?>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li class="list-group-item">No hay personas asociadas a esta aerolinea.</li>
+        <?php endif; ?>
+    </ul>
+
+    <div class="mt-4">
+        <a href="listaraerolinea" class="btn btn-primary">Volver a la lista de aerolineas</a>
+    </div>
+</div>
+
+<?php require './templates/layouts/footer.phtml'; ?>

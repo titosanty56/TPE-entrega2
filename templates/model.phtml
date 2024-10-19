@@ -1,0 +1,19 @@
+<ul class="list-group">
+    <?php if(isset($personas)): ?>
+        <?php foreach($personas as $persona): ?>
+            <li class="list-group-item item-aerolinea d-flex justify-content-between align-items-center">
+                <span>
+                    <?=$persona->Nombre?> 
+                </span>
+                <span>
+                    <a href="detallespersona/<?=$persona->id_persona ?>" class="btn btn-success btn-sm text-white">Ver mas</a>
+                </span>
+            </li> 
+            <?php endforeach; ?>
+    <?php endif; ?>
+</ul>
+<?php if($this->user): ?> 
+    <div class="text-center mt-3">
+        <a href="showAddPersona/" class="btn btn-primary">Hacer cambios</a>
+    </div>
+    <?php endif; ?>

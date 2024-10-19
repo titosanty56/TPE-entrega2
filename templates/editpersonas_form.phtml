@@ -1,0 +1,30 @@
+<h1>Editar Persona</h1>
+
+<?php if ($this->user): ?>
+    <form action="<?='editPersona/' . $persona->id_persona ?>" method="post">
+    <div class="mb-3">
+        <label for="Nombre" class="form-label">Nombre:</label>
+        <input name="Nombre" type="text" class="form-control" value="<?= $persona->Nombre ?>" required>
+    </div>
+    <div class="mb-3">
+        <label for="edad" class="form-label">Edad:</label>
+        <input name="edad" type="number" class="form-control" value="<?= $persona->edad ?>" required>
+    </div>
+    <div class="mb-3">
+        <label for="Cantidad" class="form-label">Cantidad de pasajes:</label>
+        <input name="Cantidad" type="number" class="form-control" value="<?= $persona->Cantidad ?>" required>
+    </div>
+    <div class="mb-3">
+        <label for="id_aerolinea" class="form-label">Aerolinea:</label>
+        <select name="id_aerolinea" class="form-control" required>
+            <option value="" disabled selected>Seleccione una Aerolinea</option>
+            <?php foreach ($aerolineas as $aerolinea): ?>
+                <option value="<?= $aerolinea->id; ?>"><?= $aerolinea->Nombre; ?></option> <!-- Cambiado id_fabrica a id -->
+            <?php endforeach; ?>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    <a href="<?= BASE_URL ?>">Cancelar</a>
+</form>
+<?php endif; ?>

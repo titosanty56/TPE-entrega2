@@ -1,0 +1,33 @@
+<h1>Editar Aerolinea</h1>
+
+<?php if($this->user): ?>
+    <form action="<?= BASE_URL . 'editAerolinea/' . $aerolinea->id ?>" method="post">
+        <div class="mb-3">
+                <label for="Nombre" class="form-label">
+                    Nombre:
+                </label>
+                <input name="nombre" type="text" class="form-control" value="<?= $aerolinea->Nombre ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="Pais" class="form-label">
+                    Pais:
+                </label>
+                <input name="Pais" type="text" class="form-control" value="<?= $aerolinea->Pais ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="Fundacion" class="form-label">
+                    Fecha de Fundacion:
+                </label>
+                <input name="Fundacion" type="date" class="form-control" value="<?= $aerolinea->Fundacion ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="servicios" class="form-label">
+                    Servicios que ofrece la empresa:
+                </label>
+                <input name="servicios" type="text" class="form-control" value="<?= $aerolinea->servicios ?>" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <a href="<?= BASE_URL ?>">Cancelar</a>
+    </form>
+<?php endif;?>

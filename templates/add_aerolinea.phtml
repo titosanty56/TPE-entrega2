@@ -1,0 +1,30 @@
+<?php if($this->user): ?>
+    <form method="post" action="addAerolinea">
+        <div class="mb-3">
+                <label for="nombre" class="form-label">
+                    Nombre:
+                </label>
+                <input name="nombre" type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="pais" class="form-label">
+                    Pais:
+                </label>
+                <input name="pais" type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="fundacion" class="form-label">
+                    Fundacion:
+                </label>
+                <input name="fundacion" type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="servicios" class="form-label">
+                    Servicios:
+                </label>
+                <input name="servicios" type="text" class="form-control" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Aerolinea</button>
+    </form>
+<?php endif;?>

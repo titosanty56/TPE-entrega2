@@ -1,0 +1,24 @@
+<?php require './templates/layouts/header.phtml'; ?>
+
+<div class="container mt-5">
+    <h1 class="text-center text-secondary display-6">Detalles de la persona: <?= $persona->Nombre; ?></h1>
+    
+    <div class="card mb-4">
+        <div class="card-header">
+            Información de la persona
+        </div>
+        <div class="card-body">
+            <p><strong>Edad:</strong><?= number_format($persona->edad); ?> años</p>
+            <p><strong>Cantidad de pasajes:</strong> <?= number_format($persona->Cantidad); ?></p>
+            <p><strong>Destino:</strong> <?= $persona->Destino ?></p>
+            <p><strong>Aerolinea:</strong> <?= $aerolinea; ?></p> <!-- Aquí ya no es id_fabrica sino el nombre de la fábrica -->        
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="listarpersona" class="btn btn-primary">Volver a la lista de personas</a>
+    </div>
+</div>
+
+
+<?php require './templates/layouts/footer.phtml'; ?>

@@ -8,3 +8,8 @@ li.finished .label {
     opacity: .4;
     text-decoration: line-through;
 }
+
+.icon-logo {
+    width: 50px;  /* Ajusta el ancho de la imagen */
+    height: 50px; /* Ajusta la altura de la imagen */
+}

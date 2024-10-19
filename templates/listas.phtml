@@ -1,0 +1,14 @@
+<?php 
+    require './plantillas/layouts/header.phtml';
+
+        if(isset($aerolineas)){
+            echo '<ul>';
+            foreach($aerolineas as $aerolinea){
+                echo '<li>' . $aerolinea->Nombre . '</li>'; 
+                echo '<a href="detallesaerolinea/' . $aerolinea->id . '">Ver mas</a>';
+            }
+            echo '</ul>';
+        }
+    
+    require './plantillas/layouts/footer.phtml'
+?>

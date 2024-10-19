@@ -1,5 +1,6 @@
 <?php
-class personasView {
+class personasViews {
+public $user;
 
     public function showPersonas($personas) {
         // la vista define una nueva variable con la cantida de tareas

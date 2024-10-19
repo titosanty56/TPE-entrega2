@@ -2,7 +2,7 @@
 require_once './app/models/user.models.php';
 require_once './app/views/auth.views.php';
 
-class AuthController {
+class AuthControllers {
     private $model;
     private $view;
 
@@ -17,7 +17,7 @@ class AuthController {
     }
 
     public function login() {
-        if (!isset($_POST['email']) || empty($_POST['email'])) {
+        if (!isset($_POST['user']) || empty($_POST['user'])) {
             return $this->view->showLogin('Falta completar el nombre de usuario');
         }
     
@@ -25,11 +25,11 @@ class AuthController {
             return $this->view->showLogin('Falta completar la contraseña');
         }
     
-        $email = $_POST['email'];
+        $user = $_POST['user'];
         $password = $_POST['password'];
     
         // Verificar que el usuario está en la base de datos
-        $userFromDB = $this->model->getUserByEmail($email);
+        $userFromDB = $this->model->getUserByEmail($user);
 
         // password: 123456
         // $userFromDB->password: $2y$10$xQop0wF1YJ/dKhZcWDqHceUM96S04u73zGeJtU80a1GmM.H5H0EHC
